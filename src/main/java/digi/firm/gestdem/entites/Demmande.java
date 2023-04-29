@@ -9,17 +9,20 @@ import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor @ToString
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Type")
+
 public class Demmande {
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     protected Long id;
-    protected String Nom;
+    protected String nom;
     protected double superficie;
+    @Temporal(TemporalType.DATE)
     protected Date datesouhaite;
     protected String objectif;
-    protected String Tel;
-    protected String Email;
+    protected String tel;
+    protected String email;
+    private int ICE;
+    private String typeDemmandeur;
+
 
 
 }

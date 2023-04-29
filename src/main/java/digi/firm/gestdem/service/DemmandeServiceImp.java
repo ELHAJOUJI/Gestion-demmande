@@ -20,6 +20,11 @@ public class DemmandeServiceImp implements DemmandeService {
     }
 
     @Override
+    public Demmande getDemmande(long id) {
+        return demmanderepo.findById(id).get();
+    }
+
+    @Override
     public void SupprimerDemmande(Long id) {
         demmanderepo.deleteById(id);
 
@@ -40,4 +45,11 @@ public class DemmandeServiceImp implements DemmandeService {
     public List<Demmande> AllDemmande() {
         return demmanderepo.findAll() ;
     }
+
+    @Override
+    public List<Demmande> DemmandeByName(String nom) {
+        return demmanderepo.findByNom(nom);
+    }
+
+
 }
